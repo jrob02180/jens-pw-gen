@@ -1,45 +1,49 @@
-// Array for lowercase
+// Variables for password criteria
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
-// Array for uppercase
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// Array for numbers
 var numbers = "1234567890";
-// Array for special characters
-var characters = "!@#$%^&*()";
-// user input
-// How many characters would you like your password to contain?
-// Do we need to confirm lowecase, uppercase, numbers, special characters?
-
-// If use chose to add lowercase characters
-// Randomary select Y, # of char, push to the results array
-
-// results = ["a", "b", "0", "?"]
-
-//display results on to page (target text area, display results)
-// document.write?
-
-
-
-
+var characters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   var finalPassword = "";
-  var passwordSize = prompt("Choose a password length between 8 and 128 characters.");
-  var checkLower = confirm("Would you like to include lowercase letters in your password?");
-  var checkUpper = confirm("Would you like to include uppercase letters in your password?");
-  var checkNumber = confirm("Would you like to include numbers letters in your password?");
-  var checkChar = confirm("Would you like to include characters letters in your password?");
-
+  var passwordSize = prompt(
+    "How many characters would you like your password to contain? Please choose a password length between 8 and 128 characters."
+  );
   if (passwordSize < 8 || passwordSize > 128) {
-    alert("Invalid entry, please try again.");
+    alert(
+      "Invalid entry. Password length must be between 8 and 128 characters. Please try again."
+    );
     return;
   }
-  for (let i = 0; i < passwordSize; i++) {
+  var checkLower = confirm(
+    "Would you like to include lowercase letters in your password?"
+  );
+  var checkUpper = confirm(
+    "Would you like to include uppercase letters in your password?"
+  );
+  var checkNumber = confirm(
+    "Would you like to include numbers in your password?"
+  );
+  var checkChar = confirm(
+    "Would you like to include special characters in your password?"
+  );
 
-    if (checkLower === true && finalPassword.length < passwordSize ) {
+  if (
+    checkLower === false &&
+    checkUpper === false &&
+    checkNumber === false &&
+    checkChar === false
+  ) {
+    alert("You much choose at least one character type. Please try again.");
+    return;
+  }
+
+  // user input
+  for (let i = 0; i < passwordSize; i++) {
+    if (checkLower === true && finalPassword.length < passwordSize) {
       var position = Math.floor(Math.random() * lowercase.length);
       finalPassword = finalPassword + lowercase[position];
     }
@@ -56,7 +60,6 @@ function generatePassword() {
       finalPassword = finalPassword + characters[position];
     }
   }
-
   return finalPassword;
 }
 
@@ -66,7 +69,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
