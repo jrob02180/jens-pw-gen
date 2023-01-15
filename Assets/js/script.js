@@ -39,7 +39,6 @@ function generatePassword() {
     checkChar === false
   ) {
     alert("You much choose at least one character type. Please try again.");
-    passwordText.value = password;
     return;
   }
 
