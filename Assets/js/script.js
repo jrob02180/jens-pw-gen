@@ -7,6 +7,7 @@ var characters = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Password function to generate password
 function generatePassword() {
   var finalPassword = "";
   var passwordSize = prompt(
@@ -38,10 +39,11 @@ function generatePassword() {
     checkChar === false
   ) {
     alert("You much choose at least one character type. Please try again.");
+    passwordText.value = password;
     return;
   }
 
-  // user input
+  // User input
   for (let i = 0; i < passwordSize; i++) {
     if (checkLower === true && finalPassword.length < passwordSize) {
       var position = Math.floor(Math.random() * lowercase.length);
@@ -63,7 +65,6 @@ function generatePassword() {
   return finalPassword;
 }
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -71,5 +72,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Event Listener
 generateBtn.addEventListener("click", writePassword);

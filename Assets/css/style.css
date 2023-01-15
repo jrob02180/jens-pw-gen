@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Styling for Header and Main Section */
 html,
 body,
 .wrapper {
@@ -54,6 +55,7 @@ header {
   min-height: 100px;
 }
 
+/* Styling for Footer */
 .card-footer {
   text-align: center;
 }
@@ -97,6 +99,7 @@ button[disabled] {
   float: right;
 }
 
+/* Styling for Password Section */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
