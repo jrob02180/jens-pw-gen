@@ -7,4 +7,4 @@ This challenge was to create an application for users to randomly generate passw
 
 https://jrob02180.github.io/jens-pw-gen/
 
-![Password Generator Screenshot](./assets/images/03-javascript-homework-demo.png)
+![Password Generator Screenshot](./Assets/images/03-javascript-homework-demo.png)

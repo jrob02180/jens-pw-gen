@@ -16,7 +16,8 @@ function generatePassword() {
   if (passwordSize < 8 || passwordSize > 128) {
     alert(
       "Invalid entry. Password length must be between 8 and 128 characters. Please try again."
-    );
+    ); 
+    passwordText.value = "Your Secure Password";
     return;
   }
   var checkLower = confirm(
@@ -39,6 +40,7 @@ function generatePassword() {
     checkChar === false
   ) {
     alert("You much choose at least one character type. Please try again.");
+    passwordText.value = "Your Secure Password";
     return;
   }
 
